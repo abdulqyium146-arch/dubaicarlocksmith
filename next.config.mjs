@@ -37,21 +37,6 @@ const nextConfig = {
 
   async redirects() {
     return [
-      // ── Domain migration: carlocksmithdubai.com → locksmith-dubai.com ──────
-      // Processed first, before all other rules. Preserves full path + query.
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'carlocksmithdubai.com' }],
-        destination: 'https://locksmith-dubai.com/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.carlocksmithdubai.com' }],
-        destination: 'https://locksmith-dubai.com/:path*',
-        permanent: true,
-      },
-
       // www → non-www canonical domain
       {
         source: '/:path*',
